@@ -10,6 +10,8 @@ public class ApiError {
     private String error;
     private String message;
     private String path;
+
+    // Validation error details (optional)
     private Map<String, String> validationErrors;
 
     public ApiError() {}

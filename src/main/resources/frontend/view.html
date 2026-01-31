@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>View Reservation | Ocean View Resort</title>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+  <div class="container">
+    <!-- Navbar -->
+    <div class="nav">
+      <div class="brand">
+        <div class="brand-badge"></div>
+        <div>
+          Ocean View Resort<br/>
+          <span style="font-size:12px;color:var(--muted);font-weight:600;">Room Reservation System</span>
+        </div>
+      </div>
+
+      <div class="nav-links">
+        <a class="chip" id="nav-reservation" href="reservation.html">Add Reservation</a>
+        <a class="chip" id="nav-view" href="view.html">View Reservation</a>
+        <a class="chip" id="nav-bill" href="bill.html">Billing</a>
+        <a class="chip" id="nav-help" href="help.html">Help</a>
+        <button class="btn btn-danger" onclick="logout()">Logout</button>
+      </div>
+    </div>
+
+    <h1 class="page-title">View reservation</h1>
+    <p class="page-subtitle">Search by reservation number to display full booking details.</p>
+
+    <div class="grid">
+      <div class="card">
+        <div class="card-header"><h3 class="card-title">Search</h3></div>
+        <div class="card-content">
+          <form class="form" id="viewForm">
+            <div class="field">
+              <label>Reservation Number</label>
+              <input class="input" id="searchNumber" placeholder="e.g., RES-4001" required />
+            </div>
+            <div class="actions">
+              <button class="btn btn-primary" type="submit">Find Reservation</button>
+              <button class="btn btn-ghost" type="button" id="demoFind">Use demo</button>
+            </div>
+            <div id="msg"></div>
+          </form>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header"><h3 class="card-title">Result</h3></div>
+        <div class="card-content">
+          <div id="result" class="notice">No reservation loaded yet.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/view.js"></script>
+  <script>
+    protectPage();
+    setActiveNav("nav-view");
+  </script>
+</body>
+</html>

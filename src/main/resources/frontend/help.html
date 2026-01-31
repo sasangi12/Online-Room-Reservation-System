@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Help | Ocean View Resort</title>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+  <div class="container">
+    <!-- Navbar -->
+    <div class="nav">
+      <div class="brand">
+        <div class="brand-badge"></div>
+        <div>
+          Ocean View Resort<br/>
+          <span style="font-size:12px;color:var(--muted);font-weight:600;">Room Reservation System</span>
+        </div>
+      </div>
+
+      <div class="nav-links">
+        <a class="chip" id="nav-reservation" href="reservation.html">Add Reservation</a>
+        <a class="chip" id="nav-view" href="view.html">View Reservation</a>
+        <a class="chip" id="nav-bill" href="bill.html">Billing</a>
+        <a class="chip" id="nav-help" href="help.html">Help</a>
+        <button class="btn btn-danger" onclick="logout()">Logout</button>
+      </div>
+    </div>
+
+    <h1 class="page-title">Help & usage guide</h1>
+    <p class="page-subtitle">Simple instructions for staff members using the system.</p>
+
+    <div class="card">
+      <div class="card-header"><h3 class="card-title">How to use</h3></div>
+      <div class="card-content">
+        <div class="notice">
+          <strong>1) Login</strong><br/>
+          Use your staff username and password to enter the system.<br/><br/>
+
+          <strong>2) Add Reservation</strong><br/>
+          Enter a unique reservation number, guest details, room type, and dates. Then save.<br/><br/>
+
+          <strong>3) View Reservation</strong><br/>
+          Use reservation number to retrieve full booking details.<br/><br/>
+
+          <strong>4) Billing</strong><br/>
+          Enter reservation number to calculate number of nights and total amount automatically.<br/><br/>
+
+          <strong>Common issues</strong><br/>
+          • Duplicate reservation number will be rejected.<br/>
+          • Check-out date must be after check-in date.<br/>
+          • Contact number must be a valid numeric format (with optional +).
+        </div>
+
+        <div class="footer">If you face errors, contact the system administrator.</div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script>
+    protectPage();
+    setActiveNav("nav-help");
+  </script>
+</body>
+</html>

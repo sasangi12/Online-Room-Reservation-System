@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Login | Ocean View Resort</title>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+  <div class="container">
+    <div class="nav">
+      <div class="brand">
+        <div class="brand-badge"></div>
+        <div>
+          Ocean View Resort<br/>
+          <span style="font-size:12px;color:var(--muted);font-weight:600;">Room Reservation System</span>
+        </div>
+      </div>
+      <div class="nav-links">
+        <a class="chip active" href="login.html">Login</a>
+      </div>
+    </div>
+
+    <h1 class="page-title">Welcome back</h1>
+    <p class="page-subtitle">Login to access the reservation system.</p>
+
+    <div class="grid">
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">Login</h3>
+        </div>
+        <div class="card-content">
+          <form class="form" id="loginForm">
+            <div class="field">
+              <label>Username</label>
+              <input class="input" type="text" id="username" placeholder="e.g., admin" required />
+            </div>
+
+            <div class="field">
+              <label>Password</label>
+              <input class="input" type="password" id="password" placeholder="••••••••" required />
+            </div>
+
+            <div class="actions">
+              <button class="btn btn-primary" type="submit">Login</button>
+              <button class="btn btn-ghost" type="button" id="fillBtn">Use demo (admin)</button>
+            </div>
+
+            <div id="msg"></div>
+          </form>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">Quick tips</h3>
+        </div>
+        <div class="card-content">
+          <div class="notice">
+            <strong>Demo account</strong><br/>
+            Username: <b>admin</b><br/>
+            Password: <b>admin123</b><br/><br/>
+            After login you can add reservations, view details, and generate bills.
+          </div>
+          <div class="footer">© Ocean View Resort • Secure access for staff</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>
