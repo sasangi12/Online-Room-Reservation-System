@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Reports | Ocean View Resort</title>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+  <div class="container">
+    <!-- Navbar -->
+    <div class="nav">
+      <div class="brand">
+        <div class="brand-badge"></div>
+        <div>
+          Ocean View Resort<br/>
+          <span style="font-size:12px;color:var(--muted);font-weight:600;">Room Reservation System</span>
+        </div>
+      </div>
+
+      <div class="nav-links">
+        <a class="chip" id="nav-reservation" href="reservation.html">Add Reservation</a>
+        <a class="chip" id="nav-view" href="view.html">View Reservation</a>
+        <a class="chip" id="nav-bill" href="bill.html">Billing</a>
+        <a class="chip" id="nav-reports" href="reports.html">Reports</a>
+        <a class="chip" id="nav-help" href="help.html">Help</a>
+        <button class="btn btn-danger" onclick="logout()">Logout</button>
+      </div>
+    </div>
+
+    <h1 class="page-title">Reports</h1>
+    <p class="page-subtitle">Generate reservation and revenue reports using a date range.</p>
+
+    <div class="grid">
+      <!-- Controls -->
+      <div class="card">
+        <div class="card-header"><h3 class="card-title">Report filters</h3></div>
+        <div class="card-content">
+          <form class="form" id="reportForm">
+
+            <div class="row">
+              <div class="field">
+                <label>From</label>
+                <input class="input" type="date" id="fromDate" required />
+              </div>
+              <div class="field">
+                <label>To</label>
+                <input class="input" type="date" id="toDate" required />
+              </div>
+            </div>
+
+            <div class="actions">
+              <button class="btn btn-primary" type="submit">Generate Reports</button>
+              <button class="btn btn-ghost" type="button" id="demoRange">Use demo range</button>
+              <button class="btn btn-ghost" type="button" id="clearBtn">Clear</button>
+            </div>
+
+            <div id="msg"></div>
+          </form>
+
+          <div style="height:12px"></div>
+
+          <div class="notice">
+            <strong>What you get</strong><br/>
+            • Reservation list within the date range<br/>
+            • Total revenue (calculated using room type rate × number of nights)<br/>
+            <span style="display:block;margin-top:10px;color:var(--muted);">
+              Tip: create 2–3 reservations first (Add Reservation page) within your selected range.
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Revenue Summary -->
+      <div class="card">
+        <div class="card-header"><h3 class="card-title">Revenue summary</h3></div>
+        <div class="card-content">
+          <div id="revenueBox" class="notice">No revenue report generated yet.</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="height:16px"></div>
+
+    <!-- Reservations Table -->
+    <div class="card">
+      <div class="card-header"><h3 class="card-title">Reservations in range</h3></div>
+      <div class="card-content">
+        <div id="tableWrap" class="notice">No reservation report generated yet.</div>
+      </div>
+    </div>
+
+    <div class="footer">Reports help the resort monitor bookings and earnings efficiently.</div>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/reports.js"></script>
+  <script>
+    protectPage();
+    setActiveNav("nav-reports");
+  </script>
+</body>
+</html>
